@@ -4078,16 +4078,17 @@ symbol.icon:not(.icon--full-color) rect {
 .footer__blocks {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .footer__block {
-  flex: 0 1 25%;
-  max-width: 210px;
+  flex: 0 1 30%;
+  max-width: 270px;
 }
 @media only screen and (max-width: 768px) {
   .footer__blocks--mobile {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
   }
   .footer__block,
@@ -4098,6 +4099,10 @@ symbol.icon:not(.icon--full-color) rect {
   .footer__block[data-type="contact"],
   .footer__block[data-type="payment"] {
     flex: 1 0 100%;
+  }
+
+  .footer__block[data-type="menu"] {
+    margin-top: 30px;
   }
 }
 .footer__social {
@@ -5034,6 +5039,7 @@ form + .footer__social {
   height: 10px;
 }
 .site-nav__link {
+  font-size: 19px;
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
