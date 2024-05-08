@@ -83,8 +83,18 @@
   </style>
   <link href="../../css/theme.css" rel="stylesheet" type="text/css" media="all">
   <style data-shopify="">
+    .header-section--overlay {
+      padding-bottom: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .header-section--overlay {
+        padding-bottom: 50px;
+      }
+    }
+
     :root {
-      --typeHeaderPrimary: "Libre Baskerville";
+      --typeHeaderPrimary: Arial;
       --typeHeaderFallback: serif;
       --typeHeaderSize: 38px;
       --typeHeaderWeight: 400;
@@ -158,7 +168,7 @@
       search: "/search"
     };
     theme.strings = {
-      soldOut: "Sold Out",
+      soldOut: "",
       unavailable: "Unavailable",
       inStockLabel: "In stock, ready to ship",
       oneStockLabel: "Low stock - [count] item left",
@@ -998,7 +1008,7 @@
       <div id="shopify-section-header" class="shopify-section header-section">
         <style>
           .site-nav__link {
-            font-size: 15px;
+            font-size: 19px;
           }
 
           .site-nav__link {
@@ -1026,7 +1036,7 @@
         <div data-section-id="header" data-section-type="header">
           <div id="HeaderWrapper" class="header-wrapper">
             <header id="SiteHeader" class="site-header site-header--heading-style" data-sticky="true"
-              data-overlay="false">
+              data-overlay="true">
 
               <div class="site-header__element site-header__element--top">
                 <div class="page-width">
@@ -1041,54 +1051,6 @@
                         </svg>
                         <span class="icon__fallback-text">Site navigation</span>
                       </button>
-                      <form action="/search" method="get" role="search" class="site-header__search-form"
-                        data-dark="false">
-                        <input type="hidden" name="type" value="product,article">
-                        <input type="hidden" name="options[prefix]" value="last">
-                        <input type="search" name="q" value="" placeholder="Search..." class="site-header__search-input"
-                          aria-label="Search...">
-                        <label for="search-icon" class="hidden-label">Search</label>
-                        <label for="search-close" class="hidden-label">Close</label>
-                        <button type="submit" id="search-icon"
-                          class="text-link site-header__search-btn site-header__search-btn--submit">
-                          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-                            viewBox="0 0 64 64">
-                            <defs>
-                              <style>
-                                .cls-1 {
-                                  fill: none;
-                                  stroke: #000;
-                                  stroke-miterlimit: 10;
-                                  stroke-width: 2px
-                                }
-                              </style>
-                            </defs>
-                            <path class="cls-1"
-                              d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                            </path>
-                          </svg>
-                          <span class="icon__fallback-text">Search</span>
-                        </button>
-
-                        <button type="button" id="search-close"
-                          class="text-link site-header__search-btn site-header__search-btn--cancel">
-                          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close"
-                            viewBox="0 0 64 64">
-                            <defs>
-                              <style>
-                                .cls-1 {
-                                  fill: none;
-                                  stroke: #000;
-                                  stroke-miterlimit: 10;
-                                  stroke-width: 2px
-                                }
-                              </style>
-                            </defs>
-                            <path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"></path>
-                          </svg>
-                          <span class="icon__fallback-text">Close</span>
-                        </button>
-                      </form>
                     </div>
                     <div class="header-item header-item--logo">
                       <style data-shopify="">
@@ -1125,7 +1087,7 @@
                           }
                         }
                       </style>
-                      <div class="h1 site-header__logo"><span class="visually-hidden">WINONA</span>
+                      <h1 class="site-header__logo"><span class="visually-hidden">WINONA</span>
 
                         <a href="/" class="site-header__logo-link logo--has-inverted">
                           <img class="small--hide" src="../images/1_180x.png"
@@ -1140,74 +1102,17 @@
                             srcset="../images/1_1f8ac43a-e2d0-4235-a600-fbcc7214f690_140x.png 1x, ../images/1_1f8ac43a-e2d0-4235-a600-fbcc7214f690_140x%402x.png 2x"
                             alt="WINONA">
                         </a>
-                      </div>
+                      </h1>
                     </div>
                     <div class="header-item header-item--icons">
                       <div class="site-nav">
                         <div class="site-nav__icons">
-                          <a href="/search"
-                            class="site-nav__link site-nav__link--icon js-search-header medium-up--hide js-no-transition">
-                            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-                              viewBox="0 0 64 64">
-                              <defs>
-                                <style>
-                                  .cls-1 {
-                                    fill: none;
-                                    stroke: #000;
-                                    stroke-miterlimit: 10;
-                                    stroke-width: 2px
-                                  }
-                                </style>
-                              </defs>
-                              <path class="cls-1"
-                                d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                              </path>
-                            </svg>
-                            <span class="icon__fallback-text">Search</span>
-                          </a><a class="site-nav__link site-nav__link--icon small--hide" href="/account">
-                            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-user"
-                              viewBox="0 0 64 64">
-                              <defs>
-                                <style>
-                                  .cls-1 {
-                                    fill: none;
-                                    stroke: #000;
-                                    stroke-miterlimit: 10;
-                                    stroke-width: 2px
-                                  }
-                                </style>
-                              </defs>
-                              <path class="cls-1"
-                                d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.42 0-7.63 0-13.82-9-13.82s-9 6.19-9 13.82c0 4.76 2.7 9.51 6 11.42v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z">
-                              </path>
-                            </svg>
-                            <span class="site-nav__icon-label small--hide">
-                              Account
-                            </span>
-                          </a><a href="/cart" id="HeaderCartTrigger" aria-controls="HeaderCart"
+
+
+                          <a href="/cart" id="HeaderCartTrigger" aria-controls="HeaderCart"
                             class="site-nav__link site-nav__link--icon js-no-transition" data-icon="cart"
                             aria-label="Cart">
-                            <span class="cart-link"><svg aria-hidden="true" focusable="false" role="presentation"
-                                class="icon icon-cart" viewBox="0 0 64 64">
-                                <defs>
-                                  <style>
-                                    .cls-1 {
-                                      fill: none;
-                                      stroke: #000;
-                                      stroke-miterlimit: 10;
-                                      stroke-width: 2px
-                                    }
-                                  </style>
-                                </defs>
-                                <path class="cls-1" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"></path>
-                                <circle cx="27" cy="53" r="2"></circle>
-                                <circle cx="47" cy="53" r="2"></circle>
-                              </svg><span class="cart-link__bubble">
-                                <span class="cart-link__bubble-num">0</span>
-                              </span>
-                            </span>
                             <span class="site-nav__icon-label small--hide">
-                              Cart
                             </span>
                           </a>
 
@@ -1254,7 +1159,7 @@
                         data-dark="false">
                         <input type="hidden" name="type" value="product,article">
                         <input type="hidden" name="options[prefix]" value="last">
-                        <input type="search" name="q" value="" placeholder="Search..." class="site-header__search-input"
+                        <input type="search" name="q" value="" placeholder="Поиск..." class="site-header__search-input"
                           aria-label="Search...">
                         <label for="search-icon" class="hidden-label">Search</label>
                         <label for="search-close" class="hidden-label">Close</label>
@@ -1325,15 +1230,15 @@
                     <li class="site-nav__item site-nav__expanded-item">
 
                       <a href="/" class="site-nav__link site-nav__link--underline">
-                        Home
+                        Главная
                       </a>
                     </li>
                     <li class="site-nav__item site-nav__expanded-item site-nav--has-dropdown site-nav--is-megamenu"
                       aria-haspopup="true">
 
-                      <a href="/collections/all"
+                      <a href="/collections/all.html"
                         class="site-nav__link site-nav__link--underline site-nav__link--has-dropdown">
-                        All Products
+                        Все продукты
                       </a>
                       <div class="site-nav__dropdown megamenu text-left">
                         <div class="page-width">
@@ -1341,74 +1246,76 @@
                             <div class="megamenu__cols">
                               <div class="megamenu__col">
                                 <div class="megamenu__col-title">
-                                  <a href="/collections/all"
-                                    class="site-nav__dropdown-link site-nav__dropdown-link--top-level">PRODUCT RANGE</a>
-                                </div><a href="/collections/anti-sensitive" class="site-nav__dropdown-link">
-                                  Sensitive Repair
-                                </a><a href="/collections/anti-acne" class="site-nav__dropdown-link">
-                                  Anti-Acne
-                                </a><a href="/collections/oil-control" class="site-nav__dropdown-link">
-                                  Oil-Control
-                                </a><a href="/collections/whitening" class="site-nav__dropdown-link">
-                                  Whitening
-                                </a><a href="/collections/hyaluronic-acid" class="site-nav__dropdown-link">
-                                  Hyaluronic Acid
-                                </a><a href="/collections/sun-protection" class="site-nav__dropdown-link">
-                                  Sun Protection
-                                </a><a href="/collections/body-care" class="site-nav__dropdown-link">
-                                  Body Care
-                                </a><a href="/collections/post-operative-care-of-medical-aesthetics"
+                                  <a href="/collections/all.html"
+                                    class="site-nav__dropdown-link site-nav__dropdown-link--top-level">НАША
+                                    КОЛЛЕКЦИЯ</a>
+                                </div><a href="/collections/anti-sensitive.html" class="site-nav__dropdown-link">
+                                  Для Чувствительной Кожи
+                                </a><a href="/collections/anti-acne.html" class="site-nav__dropdown-link">
+                                  Против Акне
+                                </a><a href="/collections/oil-control.html" class="site-nav__dropdown-link">
+                                  Для Жирной Кожи
+                                </a><a href="/collections/whitening.html" class="site-nav__dropdown-link">
+                                  Отбеливание
+                                </a><a href="/collections/hyaluronic-acid.html" class="site-nav__dropdown-link">
+                                  Гиалуроновая Кислота
+                                </a><a href="/collections/sun-protection.html" class="site-nav__dropdown-link">
+                                  Защита От Солнца
+                                </a><a href="/collections/body-care.html" class="site-nav__dropdown-link">
+                                  Уход За Телом
+                                </a><a href="/collections/post-operative-care-of-medical-aesthetics.html"
                                   class="site-nav__dropdown-link">
-                                  Post-operative Care Of Medical Aesthetics
+                                  Уход После Операции
                                 </a>
                               </div>
                               <div class="megamenu__col">
                                 <div class="megamenu__col-title">
-                                  <a href="/collections/all"
-                                    class="site-nav__dropdown-link site-nav__dropdown-link--top-level">PRODUCT TYPES</a>
-                                </div><a href="/collections/cleanser" class="site-nav__dropdown-link">
-                                  Cleanser
-                                </a><a href="/collections/toner" class="site-nav__dropdown-link">
-                                  Toner
-                                </a><a href="/collections/facial-mask" class="site-nav__dropdown-link">
-                                  Face Mask
-                                </a><a href="/collections/sun-protection" class="site-nav__dropdown-link">
-                                  Sun Protection
-                                </a><a href="/collections/moisturizer" class="site-nav__dropdown-link">
-                                  Moisturizer
-                                </a><a href="/collections/serum" class="site-nav__dropdown-link">
-                                  Serum
-                                </a><a href="/collections/eye-creams" class="site-nav__dropdown-link">
-                                  Eye Creams
-                                </a><a href="/collections/bundle-set" class="site-nav__dropdown-link">
-                                  Bundle &amp; Set
+                                  <a href="/collections/all.html"
+                                    class="site-nav__dropdown-link site-nav__dropdown-link--top-level">ВИДЫ
+                                    ПРОДУКЦИИ</a>
+                                </div><a href="/collections/cleanser.html" class="site-nav__dropdown-link">
+                                  Очищающее Средство
+                                </a><a href="/collections/toner.html" class="site-nav__dropdown-link">
+                                  Тоник
+                                </a><a href="/collections/facial-mask.html" class="site-nav__dropdown-link">
+                                  Маска Для Лица
+                                </a><a href="/collections/sun-protection.html" class="site-nav__dropdown-link">
+                                  Защита От Солнца
+                                </a><a href="/collections/moisturizer.html" class="site-nav__dropdown-link">
+                                  Увлажняющее Средство
+                                </a><a href="/collections/serum.html" class="site-nav__dropdown-link">
+                                  Сыворотка
+                                </a><a href="/collections/eye-creams.html" class="site-nav__dropdown-link">
+                                  Крем Для Глаз
+                                </a><a href="/collections/bundle-set.html" class="site-nav__dropdown-link">
+                                  Наборы и Комплекты
                                 </a>
                               </div>
                               <div class="megamenu__col">
                                 <div class="megamenu__col-title">
-                                  <a href="/collections/anti-sensitive"
-                                    class="site-nav__dropdown-link site-nav__dropdown-link--top-level">SKIN CONCERNS</a>
-                                </div><a href="/collections/anti-sensitive" class="site-nav__dropdown-link">
-                                  Sensitive Skin
-                                </a><a href="/collections/anti-acne" class="site-nav__dropdown-link">
-                                  Acne-Prone Skin
-                                </a><a href="/collections/oil-control" class="site-nav__dropdown-link">
-                                  Oily Skin
-                                </a><a href="/collections/hyaluronic-acid" class="site-nav__dropdown-link">
-                                  Dry Skin
+                                  <a href="/collections/anti-sensitive.html"
+                                    class="site-nav__dropdown-link site-nav__dropdown-link--top-level">ПРОБЛЕМЫ КОЖИ</a>
+                                </div><a href="/collections/anti-sensitive.html" class="site-nav__dropdown-link">
+                                  Чувствительная Кожа
+                                </a><a href="/collections/anti-acne.html" class="site-nav__dropdown-link">
+                                  Акне
+                                </a><a href="/collections/oil-control.html" class="site-nav__dropdown-link">
+                                  Жирная Кожа
+                                </a><a href="/collections/hyaluronic-acid.html" class="site-nav__dropdown-link">
+                                  Сухая Кожа
                                 </a>
                               </div>
                             </div>
                             <div class="megamenu__featured">
                               <div class="product-grid">
                                 <div class="grid-item grid-product "
-                                  data-product-handle="acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin"
-                                  data-product-id="7838069653655">
+                                  data-product-handle="hydrating-facial-cleanser-moisturizing-cleansing-foam"
+                                  data-product-id="7778765340823">
                                   <div class="grid-item__content">
                                     <div class="grid-product__actions"><button
-                                        class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-7838069653655 small--hide"
+                                        class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-7778765340823 small--hide"
                                         title="Quick shop" tabindex="-1"
-                                        data-handle="acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin">
+                                        data-handle="hydrating-facial-cleanser-moisturizing-cleansing-foam">
                                         <svg aria-hidden="true" focusable="false" role="presentation"
                                           class="icon icon-search" viewBox="0 0 64 64">
                                           <defs>
@@ -1427,72 +1334,41 @@
                                         </svg>
                                         <span class="icon__fallback-text">Quick shop</span>
                                       </button></div><a
-                                      href="/collections/body-care/products/acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin"
+                                      href="/products/hydrating-facial-cleanser-moisturizing-cleansing-foam.html"
                                       class="grid-item__link">
                                       <div class="grid-product__image-wrap">
                                         <div class="grid-product__tags">
                                           <div class="grid-product__tag grid-product__tag--sold-out">
-                                            Sold Out
+
                                           </div>
                                         </div>
                                         <div class="grid__image-ratio grid__image-ratio--square">
                                           <img class="lazyload"
-                                            data-src="//winonashop.com/cdn/shop/files/acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin-1_{width}x.jpg?v=1686119548"
+                                            data-src="//winonashop.com/cdn/shop/files/hydrating-facial-cleanser-moisturizing-cleansing-foam-1_{width}x.jpg?v=1693293434"
                                             data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
                                             data-sizes="auto"
-                                            alt="acne free gentle cleansing milk facial cleanser for oily and acne skin 1">
+                                            alt="Hydrating Facial Cleanser Moisturizing Cleansing Foam for dry and sensitive skin 1">
                                           <noscript>
                                             <img class="grid-product__image lazyloaded"
-                                              src="//winonashop.com/cdn/shop/files/acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin-1_400x.jpg?v=1686119548"
-                                              alt="acne free gentle cleansing milk facial cleanser for oily and acne skin 1">
+                                              src="//winonashop.com/cdn/shop/files/hydrating-facial-cleanser-moisturizing-cleansing-foam-1_400x.jpg?v=1693293434"
+                                              alt="Hydrating Facial Cleanser Moisturizing Cleansing Foam for dry and sensitive skin 1">
                                           </noscript>
                                         </div>
                                         <div class="grid-product__secondary-image small--hide"><img class="lazyload"
-                                            data-src="//winonashop.com/cdn/shop/files/acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin-2_{width}x.jpg?v=1686119547"
+                                            data-src="//winonashop.com/cdn/shop/files/hydrating-facial-cleanser-moisturizing-cleansing-foam-2_{width}x.jpg?v=1693293434"
                                             data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
-                                            alt="acne free gentle cleansing milk facial cleanser for oily and acne skin 2">
+                                            alt="Hydrating Facial Cleanser Moisturizing Cleansing Foam for dry and sensitive skin 2">
                                         </div>
                                       </div>
 
                                       <div class="grid-item__meta">
                                         <div class="grid-item__meta-main">
-                                          <div class="grid-product__title">Winona Acne Free Cleansing Foam</div>
+                                          <div class="grid-product__title">Winona Moisturizing Cleansing Foam</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                          <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7838069653655"
+                                          <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7778765340823"
                                             data-template="collection" data-auto-install="false">
-                                            <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
-                                              data-number-of-reviews="0" data-number-of-questions="0"> <span
-                                                class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
-                                                aria-label="0.00 stars" role="button"> <span
-                                                  class="jdgm-star jdgm--off"></span><span
-                                                  class="jdgm-star jdgm--off"></span><span
-                                                  class="jdgm-star jdgm--off"></span><span
-                                                  class="jdgm-star jdgm--off"></span><span
-                                                  class="jdgm-star jdgm--off"></span> </span> <span
-                                                class="jdgm-prev-badge__text"> No reviews </span> </div>
+
                                           </div>
-
-
-
-
-
-
                                         </div>
                                         <div class="grid-item__meta-secondary">
                                           <div class="grid-product__price"><span
@@ -1500,41 +1376,10 @@
                                                 aria-hidden="true">$22<sup>99</sup></span>
                                               <span class="visually-hidden">$22.99</span>
                                             </span></div><span class="shopify-product-reviews-badge"
-                                            data-id="7838069653655"></span>
+                                            data-id="7778765340823"></span>
                                         </div>
                                       </div>
                                     </a>
-                                  </div>
-                                </div>
-                                <div id="QuickShopModal-7838069653655" class="modal modal--square modal--quick-shop"
-                                  data-product-id="7838069653655">
-                                  <div class="modal__inner">
-                                    <div class="modal__centered">
-                                      <div class="modal__centered-content">
-                                        <div
-                                          id="QuickShopHolder-acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin">
-                                        </div>
-                                      </div>
-
-                                      <button type="button"
-                                        class="btn btn--circle btn--icon modal__close js-modal-close">
-                                        <svg aria-hidden="true" focusable="false" role="presentation"
-                                          class="icon icon-close" viewBox="0 0 64 64">
-                                          <defs>
-                                            <style>
-                                              .cls-1 {
-                                                fill: none;
-                                                stroke: #000;
-                                                stroke-miterlimit: 10;
-                                                stroke-width: 2px
-                                              }
-                                            </style>
-                                          </defs>
-                                          <path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"></path>
-                                        </svg>
-                                        <span class="icon__fallback-text">"Close (esc)"</span>
-                                      </button>
-                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1545,40 +1390,40 @@
                     </li>
                     <li class="site-nav__item site-nav__expanded-item site-nav--has-dropdown" aria-haspopup="true">
 
-                      <a href="/collections/best-sellers"
+                      <a href="/collections/best-sellers.html"
                         class="site-nav__link site-nav__link--underline site-nav__link--has-dropdown">
-                        Recommend
+                        Рекомендуем
                       </a>
                       <div class="site-nav__dropdown">
                         <ul class="site-nav__dropdown-animate site-nav__dropdown-list text-left">
                           <li class="">
-                            <a href="/collections/bundle-set"
+                            <a href="/collections/bundle-set.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Bundle &amp; Set
+                              Наборы и комплекты
                             </a>
                           </li>
                           <li class="">
-                            <a href="/products/comfort-hydrating-soothing-sensitive-moisturizing-cream"
+                            <a href="/products/comfort-hydrating-soothing-sensitive-moisturizing-cream.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Moisturizing Tolerance-Extreme Cream
+                              Увлажняющий крем для чувствительной кожи
                             </a>
                           </li>
                           <li class="">
-                            <a href="/products/anti-sensitive-moisturizing-repair-essence"
+                            <a href="/products/anti-sensitive-moisturizing-repair-essence.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Soothing Moisturizing Extra Care Essence
+                              Успокаивающая, Увлажняющая эссенция для ухода за кожей
                             </a>
                           </li>
                           <li class="">
-                            <a href="/products/sunblock-milk"
+                            <a href="/products/sunblock-milk.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Sunblock Milk Cream SPF48 PA+++
+                              Солнцезащитный крем-молочко SPF48 PA+++
                             </a>
                           </li>
                           <li class="">
-                            <a href="/products/anti-acne-essence-acne-marks-removal-for-oily-and-acne-skin"
+                            <a href="/products/anti-acne-essence-acne-marks-removal-for-oily-and-acne-skin.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Anti-Acne Essence Acne Marks Removal
+                              Эссенция против прыщей с удалением следов постакне
                             </a>
                           </li>
                         </ul>
@@ -1586,33 +1431,22 @@
                     </li>
                     <li class="site-nav__item site-nav__expanded-item site-nav--has-dropdown" aria-haspopup="true">
 
-                      <a href="/pages/about-us"
+                      <a href="/pages/about-us.html"
                         class="site-nav__link site-nav__link--underline site-nav__link--has-dropdown">
-                        About Us
+                        О нас
                       </a>
                       <div class="site-nav__dropdown">
                         <ul class="site-nav__dropdown-animate site-nav__dropdown-list text-left">
                           <li class="">
-                            <a href="/pages/ingredients"
+                            <a href="/pages/ingredients.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Ingredients
+                              Ингредиенты
                             </a>
                           </li>
                           <li class="">
-                            <a href="/pages/about-us"
+                            <a href="/pages/about-us.html"
                               class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              About Us
-                            </a>
-                          </li>
-                          <li class="">
-                            <a href="/blogs/news" class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              News
-                            </a>
-                          </li>
-                          <li class="">
-                            <a href="/blogs/skincare-tips"
-                              class="site-nav__dropdown-link site-nav__dropdown-link--second-level">
-                              Skincare tips
+                              О Нас
                             </a>
                           </li>
                         </ul>
@@ -1620,65 +1454,14 @@
                     </li>
                     <li class="site-nav__item site-nav__expanded-item">
 
-                      <a href="/pages/wholesale-program" class="site-nav__link site-nav__link--underline">
-                        Wholesale Program
+                      <a href="/pages/wholesale-program.html" class="site-nav__link site-nav__link--underline">
+                        Партнёрам
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              <div class="site-header__element site-header__element--sub" data-type="search">
-                <div class="page-width medium-up--hide">
-                  <form action="/search" method="get" role="search" class="site-header__search-form" data-dark="false">
-                    <input type="hidden" name="type" value="product,article">
-                    <input type="hidden" name="options[prefix]" value="last">
-                    <input type="search" name="q" value="" placeholder="Search..." class="site-header__search-input"
-                      aria-label="Search...">
-                    <label for="search-icon" class="hidden-label">Search</label>
-                    <label for="search-close" class="hidden-label">Close</label>
-                    <button type="submit" id="search-icon"
-                      class="text-link site-header__search-btn site-header__search-btn--submit">
-                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-                        viewBox="0 0 64 64">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: none;
-                              stroke: #000;
-                              stroke-miterlimit: 10;
-                              stroke-width: 2px
-                            }
-                          </style>
-                        </defs>
-                        <path class="cls-1"
-                          d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                        </path>
-                      </svg>
-                      <span class="icon__fallback-text">Search</span>
-                    </button>
-
-                    <button type="button" id="search-close"
-                      class="text-link site-header__search-btn site-header__search-btn--cancel">
-                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close"
-                        viewBox="0 0 64 64">
-                        <defs>
-                          <style>
-                            .cls-1 {
-                              fill: none;
-                              stroke: #000;
-                              stroke-miterlimit: 10;
-                              stroke-width: 2px
-                            }
-                          </style>
-                        </defs>
-                        <path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"></path>
-                      </svg>
-                      <span class="icon__fallback-text">Close</span>
-                    </button>
-                  </form>
-                </div>
-              </div>
               <div class="page-width site-header__drawers">
                 <div class="site-header__drawers-container">
                   <div class="site-header__drawer site-header__cart" id="HeaderCart">
@@ -1714,13 +1497,12 @@
                                         </path>
                                       </svg>
                                       <span class="icon__fallback-text">Quick shop</span>
-                                    </button></div><a
-                                    href="/collections/body-care/products/dark-spot-correcting-cream-for-face-brightening"
+                                    </button></div><a href="/products/dark-spot-correcting-cream-for-face-brightening"
                                     class="grid-item__link">
                                     <div class="grid-product__image-wrap">
                                       <div class="grid-product__tags">
                                         <div class="grid-product__tag grid-product__tag--sold-out">
-                                          Sold Out
+
                                         </div>
                                       </div>
                                       <div class="grid__image-ratio grid__image-ratio--square">
@@ -1744,27 +1526,11 @@
 
                                     <div class="grid-item__meta">
                                       <div class="grid-item__meta-main">
-                                        <div class="grid-product__title">Winona Camellia-Lucent Repairing Night Cream
+                                        <div class="grid-product__title">Winona Восстанавливающий ночной
+                                          крем
                                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                         <div style="" class="jdgm-widget jdgm-preview-badge" data-id="8054873522327"
-                                          data-template="collection" data-auto-install="false">
+                                          data-template="index" data-auto-install="false">
                                           <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
                                             data-number-of-reviews="0" data-number-of-questions="0"> <span
                                               class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
@@ -1773,8 +1539,10 @@
                                                 class="jdgm-star jdgm--off"></span><span
                                                 class="jdgm-star jdgm--off"></span><span
                                                 class="jdgm-star jdgm--off"></span><span
-                                                class="jdgm-star jdgm--off"></span> </span> <span
-                                              class="jdgm-prev-badge__text"> No reviews </span> </div>
+                                                class="jdgm-star jdgm--off"></span>
+                                            </span>
+                                            <span class="jdgm-prev-badge__text"> No reviews </span>
+                                          </div>
                                         </div>
 
 
@@ -1848,13 +1616,12 @@
                                         </path>
                                       </svg>
                                       <span class="icon__fallback-text">Quick shop</span>
-                                    </button></div><a
-                                    href="/collections/body-care/products/soothing-repairing-freeze-dried-mask"
+                                    </button></div><a href="/products/soothing-repairing-freeze-dried-mask"
                                     class="grid-item__link">
                                     <div class="grid-product__image-wrap">
                                       <div class="grid-product__tags">
                                         <div class="grid-product__tag grid-product__tag--sold-out">
-                                          Sold Out
+
                                         </div>
                                       </div>
                                       <div class="grid__image-ratio grid__image-ratio--square">
@@ -1877,27 +1644,12 @@
 
                                     <div class="grid-item__meta">
                                       <div class="grid-item__meta-main">
-                                        <div class="grid-product__title">Winona Soothing Repairing Freeze-Dried Mask
+                                        <div class="grid-product__title">Winona, Успокаивающая, восстанавливающая
+                                          сублимированная маска
                                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                         <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7815196442775"
-                                          data-template="collection" data-auto-install="false">
+                                          data-template="index" data-auto-install="false">
                                           <div style="display:none" class="jdgm-prev-badge" data-average-rating="5.00"
                                             data-number-of-reviews="1" data-number-of-questions="0"> <span
                                               class="jdgm-prev-badge__stars" data-score="5.00" tabindex="0"
@@ -1906,8 +1658,9 @@
                                                 class="jdgm-star jdgm--on"></span><span
                                                 class="jdgm-star jdgm--on"></span><span
                                                 class="jdgm-star jdgm--on"></span><span
-                                                class="jdgm-star jdgm--on"></span> </span> <span
-                                              class="jdgm-prev-badge__text"> 1 review </span> </div>
+                                                class="jdgm-star jdgm--on"></span> </span>
+                                            <span class="jdgm-prev-badge__text"> 1 review </span>
+                                          </div>
                                         </div>
 
 
@@ -1955,112 +1708,6 @@
                                       <span class="icon__fallback-text">"Close (esc)"</span>
                                     </button>
                                   </div>
-                                </div>
-                              </div>
-                              <div class="grid-item grid-product "
-                                data-product-handle="lightning-repairing-freeze-dried-mask-facial-hydrating-mask"
-                                data-product-id="8091951792279">
-                                <div class="grid-item__content">
-                                  <div class="grid-product__actions"><button
-                                      class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-8091951792279 small--hide"
-                                      title="Quick shop" tabindex="-1"
-                                      data-handle="lightning-repairing-freeze-dried-mask-facial-hydrating-mask">
-                                      <svg aria-hidden="true" focusable="false" role="presentation"
-                                        class="icon icon-search" viewBox="0 0 64 64">
-                                        <defs>
-                                          <style>
-                                            .cls-1 {
-                                              fill: none;
-                                              stroke: #000;
-                                              stroke-miterlimit: 10;
-                                              stroke-width: 2px
-                                            }
-                                          </style>
-                                        </defs>
-                                        <path class="cls-1"
-                                          d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                                        </path>
-                                      </svg>
-                                      <span class="icon__fallback-text">Quick shop</span>
-                                    </button></div><a
-                                    href="/collections/body-care/products/lightning-repairing-freeze-dried-mask-facial-hydrating-mask"
-                                    class="grid-item__link">
-                                    <div class="grid-product__image-wrap">
-                                      <div class="grid-product__tags">
-                                        <div class="grid-product__tag grid-product__tag--sold-out">
-                                          Sold Out
-                                        </div>
-                                      </div>
-                                      <div class="grid__image-ratio grid__image-ratio--square">
-                                        <img class="lazyload"
-                                          data-src="//winonashop.com/cdn/shop/files/lightning-repairing-freeze-dried-mask-facial-hydrating-mask-1_{width}x.jpg?v=1698752458"
-                                          data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
-                                          data-sizes="auto" alt="">
-                                        <noscript>
-                                          <img class="grid-product__image lazyloaded"
-                                            src="//winonashop.com/cdn/shop/files/lightning-repairing-freeze-dried-mask-facial-hydrating-mask-1_400x.jpg?v=1698752458"
-                                            alt="">
-                                        </noscript>
-                                      </div>
-                                      <div class="grid-product__secondary-image small--hide"><img class="lazyload"
-                                          data-src="//winonashop.com/cdn/shop/files/lightning-repairing-freeze-dried-mask-facial-hydrating-mask-2_{width}x.jpg?v=1698653737"
-                                          data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
-                                          alt="">
-                                      </div>
-                                    </div>
-
-                                    <div class="grid-item__meta">
-                                      <div class="grid-item__meta-main">
-                                        <div class="grid-product__title">Winona Lightening Repairing Freeze-Dried Mask
-                                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        <div style="" class="jdgm-widget jdgm-preview-badge" data-id="8091951792279"
-                                          data-template="collection" data-auto-install="false">
-                                          <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
-                                            data-number-of-reviews="0" data-number-of-questions="0"> <span
-                                              class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
-                                              aria-label="0.00 stars" role="button"> <span
-                                                class="jdgm-star jdgm--off"></span><span
-                                                class="jdgm-star jdgm--off"></span><span
-                                                class="jdgm-star jdgm--off"></span><span
-                                                class="jdgm-star jdgm--off"></span><span
-                                                class="jdgm-star jdgm--off"></span> </span> <span
-                                              class="jdgm-prev-badge__text"> No reviews </span> </div>
-                                        </div>
-
-
-
-
-
-
-                                      </div>
-                                      <div class="grid-item__meta-secondary">
-                                        <div class="grid-product__price"><span
-                                            class="grid-product__price--current"><span aria-hidden="true"
-                                              class="grid-product__price--from"><span>from</span>
-                                              $21<sup>99</sup></span>
-                                            <span class="visually-hidden"><span>from</span> $21.99</span>
-                                          </span></div><span class="shopify-product-reviews-badge"
-                                          data-id="8091951792279"></span>
-                                      </div>
-                                    </div>
-                                  </a>
                                 </div>
                               </div>
                               <div id="QuickShopModal-8091951792279" class="modal modal--square modal--quick-shop"
@@ -2119,12 +1766,12 @@
                                       </svg>
                                       <span class="icon__fallback-text">Quick shop</span>
                                     </button></div><a
-                                    href="/collections/body-care/products/extra-moisturizing-essence-skin-care-for-dry-sensitive-skin"
+                                    href="/products/extra-moisturizing-essence-skin-care-for-dry-sensitive-skin"
                                     class="grid-item__link">
                                     <div class="grid-product__image-wrap">
                                       <div class="grid-product__tags">
                                         <div class="grid-product__tag grid-product__tag--sold-out">
-                                          Sold Out
+
                                         </div>
                                       </div>
                                       <div class="grid__image-ratio grid__image-ratio--square">
@@ -2132,17 +1779,17 @@
                                           data-src="//winonashop.com/cdn/shop/files/extra-moisturizing-essence-skin-care-for-dry-sensitive-skin-1_{width}x.jpg?v=1690963792"
                                           data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
                                           data-sizes="auto"
-                                          alt="Extra Moisturizing Essence Skin Care For Dry &amp; Sensitive Skin 1">
+                                          alt="Extra Moisturizing Essence Skin Care For Dry &amp; Для Чувствительной кожи 1">
                                         <noscript>
                                           <img class="grid-product__image lazyloaded"
                                             src="//winonashop.com/cdn/shop/files/extra-moisturizing-essence-skin-care-for-dry-sensitive-skin-1_400x.jpg?v=1690963792"
-                                            alt="Extra Moisturizing Essence Skin Care For Dry & Sensitive Skin 1">
+                                            alt="Extra Moisturizing Essence Skin Care For Dry & Для Чувствительной кожи 1">
                                         </noscript>
                                       </div>
                                       <div class="grid-product__secondary-image small--hide"><img class="lazyload"
                                           data-src="//winonashop.com/cdn/shop/files/extra-moisturizing-essence-skin-care-for-dry-sensitive-skin-2_{width}x.jpg?v=1690963792"
                                           data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
-                                          alt="Extra Moisturizing Essence Skin Care For Dry &amp; Sensitive Skin 2">
+                                          alt="Extra Moisturizing Essence Skin Care For Dry &amp; Для Чувствительной кожи 2">
                                       </div>
                                     </div>
 
@@ -2167,7 +1814,7 @@
 
 
                                         <div style="" class="jdgm-widget jdgm-preview-badge" data-id="8029935632535"
-                                          data-template="collection" data-auto-install="false">
+                                          data-template="index" data-auto-install="false">
                                           <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
                                             data-number-of-reviews="0" data-number-of-questions="1"> <span
                                               class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
@@ -2176,8 +1823,10 @@
                                                 class="jdgm-star jdgm--off"></span><span
                                                 class="jdgm-star jdgm--off"></span><span
                                                 class="jdgm-star jdgm--off"></span><span
-                                                class="jdgm-star jdgm--off"></span> </span> <span
-                                              class="jdgm-prev-badge__text"> No reviews </span> </div>
+                                                class="jdgm-star jdgm--off"></span>
+                                            </span>
+                                            <span class="jdgm-prev-badge__text"> No reviews </span>
+                                          </div>
                                         </div>
 
 
@@ -2265,7 +1914,7 @@
                     <div class="site-header__drawer-animate">
                       <div class="slide-nav__wrapper" data-level="1">
                         <ul class="slide-nav">
-                          <li class="slide-nav__item"><a href="/" class="slide-nav__link"><span>Home</span>
+                          <li class="slide-nav__item"><a href="/" class="slide-nav__link"><span>Главная</span>
                               <svg aria-hidden="true" focusable="false" role="presentation"
                                 class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                 <path
@@ -2274,14 +1923,9 @@
                               </svg>
                             </a></li>
                           <li class="slide-nav__item"><button type="button" class="slide-nav__button js-toggle-submenu"
-                              data-target="tier-2-all-products2" data-active="true">
+                              data-target="tier-2-all-products2">
                               <span class="slide-nav__link">
-                                <div class="slide-nav__image">
-                                  <img
-                                    src="../images/acne-free-cleansing-milk-facial-cleanser-for-oily-and-acne-skin-1_400x.jpg"
-                                    alt="Products">
-                                </div>
-                                <span>All Products</span>
+                                <span>Все продукты</span>
                                 <svg aria-hidden="true" focusable="false" role="presentation"
                                   class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                   <path
@@ -2302,15 +1946,15 @@
                                         d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z">
                                       </path>
                                     </svg>
-                                    <span>All Products</span>
+                                    <span>Все продукты</span>
                                   </span>
                                 </button>
                               </li>
 
 
                               <li class="slide-nav__item">
-                                <a href="/collections/all" class="slide-nav__link">
-                                  <span>View all</span>
+                                <a href="/collections/all.html" class="slide-nav__link">
+                                  <span>Посмотреть все</span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2320,10 +1964,9 @@
                                 </a>
                               </li>
                               <li class="slide-nav__item"><button type="button"
-                                  class="slide-nav__button js-toggle-submenu" data-target="tier-3-product-range2"
-                                  data-active="true">
+                                  class="slide-nav__button js-toggle-submenu" data-target="tier-3-product-range2">
                                   <span class="slide-nav__link slide-nav__sublist-link">
-                                    <span>PRODUCT RANGE</span>
+                                    <span>Линейка пародукции</span>
                                     <svg aria-hidden="true" focusable="false" role="presentation"
                                       class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                       <path
@@ -2344,15 +1987,15 @@
                                             d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z">
                                           </path>
                                         </svg>
-                                        <span>PRODUCT RANGE</span>
+                                        <span>Линейка продукции</span>
                                       </span>
                                     </button>
                                   </li>
 
 
                                   <li class="slide-nav__item">
-                                    <a href="/collections/all" class="slide-nav__link">
-                                      <span>View all</span>
+                                    <a href="/collections/all.html" class="slide-nav__link">
+                                      <span>Посмотреть все</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2362,8 +2005,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/anti-sensitive" class="slide-nav__link">
-                                      <span>Sensitive Repair</span>
+                                    <a href="/collections/anti-sensitive.html" class="slide-nav__link">
+                                      <span>Для Чувствительной Кожи</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2373,8 +2016,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/anti-acne" class="slide-nav__link">
-                                      <span>Anti-Acne</span>
+                                    <a href="/collections/anti-acne.html" class="slide-nav__link">
+                                      <span>Против Акне</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2384,8 +2027,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/oil-control" class="slide-nav__link">
-                                      <span>Oil-Control</span>
+                                    <a href="/collections/oil-control.html" class="slide-nav__link">
+                                      <span>Для Жирной Кожи</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2395,8 +2038,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/whitening" class="slide-nav__link">
-                                      <span>Whitening</span>
+                                    <a href="/collections/whitening.html" class="slide-nav__link">
+                                      <span>Отбеливание</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2406,8 +2049,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/hyaluronic-acid" class="slide-nav__link">
-                                      <span>Hyaluronic Acid</span>
+                                    <a href="/collections/hyaluronic-acid.html" class="slide-nav__link">
+                                      <span>Гиалуроновая Кислота</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2417,8 +2060,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/sun-protection" class="slide-nav__link">
-                                      <span>Sun Protection</span>
+                                    <a href="/collections/sun-protection.html" class="slide-nav__link">
+                                      <span>Защита От Солнца</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2428,8 +2071,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/body-care" class="slide-nav__link">
-                                      <span>Body Care</span>
+                                    <a href="/collections/body-care.html" class="slide-nav__link">
+                                      <span>Уход За Телом</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2439,9 +2082,9 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/post-operative-care-of-medical-aesthetics"
+                                    <a href="/collections/post-operative-care-of-medical-aesthetics.html"
                                       class="slide-nav__link">
-                                      <span>Post-operative Care Of Medical Aesthetics</span>
+                                      <span>Уход После Операции</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2453,10 +2096,9 @@
                                 </ul>
                               </li>
                               <li class="slide-nav__item"><button type="button"
-                                  class="slide-nav__button js-toggle-submenu" data-target="tier-3-product-types2"
-                                  data-active="true">
+                                  class="slide-nav__button js-toggle-submenu" data-target="tier-3-product-types2">
                                   <span class="slide-nav__link slide-nav__sublist-link">
-                                    <span>PRODUCT TYPES</span>
+                                    <span>Виды продукции</span>
                                     <svg aria-hidden="true" focusable="false" role="presentation"
                                       class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                       <path
@@ -2477,15 +2119,15 @@
                                             d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z">
                                           </path>
                                         </svg>
-                                        <span>PRODUCT TYPES</span>
+                                        <span>Виды Продукции</span>
                                       </span>
                                     </button>
                                   </li>
 
 
                                   <li class="slide-nav__item">
-                                    <a href="/collections/all" class="slide-nav__link">
-                                      <span>View all</span>
+                                    <a href="/collections/all.html" class="slide-nav__link">
+                                      <span>Посмотреть все</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2495,8 +2137,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/cleanser" class="slide-nav__link">
-                                      <span>Cleanser</span>
+                                    <a href="/collections/cleanser.html" class="slide-nav__link">
+                                      <span>Очищающее средство</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2506,8 +2148,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/toner" class="slide-nav__link">
-                                      <span>Toner</span>
+                                    <a href="/collections/toner.html" class="slide-nav__link">
+                                      <span>Тоник</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2517,8 +2159,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/facial-mask" class="slide-nav__link">
-                                      <span>Face Mask</span>
+                                    <a href="/collections/facial-mask.html" class="slide-nav__link">
+                                      <span>Маска для лица</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2528,8 +2170,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/sun-protection" class="slide-nav__link">
-                                      <span>Sun Protection</span>
+                                    <a href="/collections/sun-protection.html" class="slide-nav__link">
+                                      <span>Защита от солнца</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2539,8 +2181,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/moisturizer" class="slide-nav__link">
-                                      <span>Moisturizer</span>
+                                    <a href="/collections/moisturizer.html" class="slide-nav__link">
+                                      <span>Увлажняющее средсво</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2550,8 +2192,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/serum" class="slide-nav__link">
-                                      <span>Serum</span>
+                                    <a href="/collections/serum.html" class="slide-nav__link">
+                                      <span>Сыворотка</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2561,8 +2203,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/eye-creams" class="slide-nav__link">
-                                      <span>Eye Creams</span>
+                                    <a href="/collections/eye-creams.html" class="slide-nav__link">
+                                      <span>Крем для глаз</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2572,8 +2214,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/bundle-set" class="slide-nav__link">
-                                      <span>Bundle &amp; Set</span>
+                                    <a href="/collections/bundle-set.html" class="slide-nav__link">
+                                      <span>Наборы и комплекты</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2585,10 +2227,9 @@
                                 </ul>
                               </li>
                               <li class="slide-nav__item"><button type="button"
-                                  class="slide-nav__button js-toggle-submenu" data-target="tier-3-skin-concerns2"
-                                  data-active="true">
+                                  class="slide-nav__button js-toggle-submenu" data-target="tier-3-skin-concerns2">
                                   <span class="slide-nav__link slide-nav__sublist-link">
-                                    <span>SKIN CONCERNS</span>
+                                    <span>Проблемы Кожи</span>
                                     <svg aria-hidden="true" focusable="false" role="presentation"
                                       class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                       <path
@@ -2616,8 +2257,8 @@
 
 
                                   <li class="slide-nav__item">
-                                    <a href="/collections/anti-sensitive" class="slide-nav__link">
-                                      <span>View all</span>
+                                    <a href="/collections/anti-sensitive.html" class="slide-nav__link">
+                                      <span>Посмотреть все</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2627,8 +2268,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/anti-sensitive" class="slide-nav__link">
-                                      <span>Sensitive Skin</span>
+                                    <a href="/collections/anti-sensitive.html" class="slide-nav__link">
+                                      <span>Для Чувствительной Кожи</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2638,8 +2279,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/anti-acne" class="slide-nav__link">
-                                      <span>Acne-Prone Skin</span>
+                                    <a href="/collections/anti-acne.html" class="slide-nav__link">
+                                      <span>Против Акне</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2649,8 +2290,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/oil-control" class="slide-nav__link">
-                                      <span>Oily Skin</span>
+                                    <a href="/collections/oil-control.html" class="slide-nav__link">
+                                      <span>Для Жирной Кожи</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2660,8 +2301,8 @@
                                     </a>
                                   </li>
                                   <li class="slide-nav__item">
-                                    <a href="/collections/hyaluronic-acid" class="slide-nav__link">
-                                      <span>Dry Skin</span>
+                                    <a href="/collections/hyaluronic-acid.html" class="slide-nav__link">
+                                      <span>Для Сухой Кожи</span>
                                       <svg aria-hidden="true" focusable="false" role="presentation"
                                         class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                         <path
@@ -2677,11 +2318,7 @@
                           <li class="slide-nav__item"><button type="button" class="slide-nav__button js-toggle-submenu"
                               data-target="tier-2-recommend3">
                               <span class="slide-nav__link">
-                                <div class="slide-nav__image">
-                                  <img src="../images/WinonaMoisturizingTolerance-ExtremeCream.1b_400x.jpg"
-                                    alt="Best Sellers/recommend">
-                                </div>
-                                <span>Recommend</span>
+                                <span>Рекомендуем</span>
                                 <svg aria-hidden="true" focusable="false" role="presentation"
                                   class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                   <path
@@ -2702,15 +2339,15 @@
                                         d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z">
                                       </path>
                                     </svg>
-                                    <span>Recommend</span>
+                                    <span>Рекомендуем</span>
                                   </span>
                                 </button>
                               </li>
 
 
                               <li class="slide-nav__item">
-                                <a href="/collections/best-sellers" class="slide-nav__link">
-                                  <span>View all</span>
+                                <a href="/collections/best-sellers.html" class="slide-nav__link">
+                                  <span>Посмотреть все</span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2719,8 +2356,9 @@
                                   </svg>
                                 </a>
                               </li>
-                              <li class="slide-nav__item"><a href="/collections/bundle-set" class="slide-nav__link">
-                                  <span>Bundle &amp; Set</span>
+                              <li class="slide-nav__item"><a href="/collections/bundle-set.html"
+                                  class="slide-nav__link">
+                                  <span>Наборы и комплекты</span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2729,28 +2367,9 @@
                                   </svg>
                                 </a></li>
                               <li class="slide-nav__item"><a
-                                  href="/products/comfort-hydrating-soothing-sensitive-moisturizing-cream"
+                                  href="/products/comfort-hydrating-soothing-sensitive-moisturizing-cream.html"
                                   class="slide-nav__link">
-                                  <span>Moisturizing Tolerance-Extreme Cream</span>
-                                  <svg aria-hidden="true" focusable="false" role="presentation"
-                                    class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
-                                    <path
-                                      d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z">
-                                    </path>
-                                  </svg>
-                                </a></li>
-                              <li class="slide-nav__item"><a href="/products/anti-sensitive-moisturizing-repair-essence"
-                                  class="slide-nav__link">
-                                  <span>Soothing Moisturizing Extra Care Essence</span>
-                                  <svg aria-hidden="true" focusable="false" role="presentation"
-                                    class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
-                                    <path
-                                      d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z">
-                                    </path>
-                                  </svg>
-                                </a></li>
-                              <li class="slide-nav__item"><a href="/products/sunblock-milk" class="slide-nav__link">
-                                  <span>Sunblock Milk Cream SPF48 PA+++</span>
+                                  <span>Увлажняющий крем для чувствительной кожи</span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2759,9 +2378,30 @@
                                   </svg>
                                 </a></li>
                               <li class="slide-nav__item"><a
-                                  href="/products/anti-acne-essence-acne-marks-removal-for-oily-and-acne-skin"
+                                  href="/products/anti-sensitive-moisturizing-repair-essence.html"
                                   class="slide-nav__link">
-                                  <span>Anti-Acne Essence Acne Marks Removal</span>
+                                  <span>Успокаивающая, Увлажняющая эссенция для ухода за кожей</span>
+                                  <svg aria-hidden="true" focusable="false" role="presentation"
+                                    class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
+                                    <path
+                                      d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z">
+                                    </path>
+                                  </svg>
+                                </a></li>
+                              <li class="slide-nav__item"><a href="/products/sunblock-milk.html"
+                                  class="slide-nav__link">
+                                  <span>Солнцезащитный крем-молочко SPF48 PA+++</span>
+                                  <svg aria-hidden="true" focusable="false" role="presentation"
+                                    class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
+                                    <path
+                                      d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z">
+                                    </path>
+                                  </svg>
+                                </a></li>
+                              <li class="slide-nav__item"><a
+                                  href="/products/anti-acne-essence-acne-marks-removal-for-oily-and-acne-skin.html"
+                                  class="slide-nav__link">
+                                  <span>Эссенция против прыщей с удалением следов постакне </span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2773,7 +2413,7 @@
                           </li>
                           <li class="slide-nav__item"><button type="button" class="slide-nav__button js-toggle-submenu"
                               data-target="tier-2-about-us4">
-                              <span class="slide-nav__link"><span>About Us</span>
+                              <span class="slide-nav__link"><span>О нас</span>
                                 <svg aria-hidden="true" focusable="false" role="presentation"
                                   class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                   <path
@@ -2794,14 +2434,14 @@
                                         d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z">
                                       </path>
                                     </svg>
-                                    <span>About Us</span>
+                                    <span>О нас</span>
                                   </span>
                                 </button>
                               </li>
 
 
-                              <li class="slide-nav__item"><a href="/pages/ingredients" class="slide-nav__link">
-                                  <span>Ingredients</span>
+                              <li class="slide-nav__item"><a href="/pages/ingredients.html" class="slide-nav__link">
+                                  <span>Состав</span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2809,26 +2449,8 @@
                                     </path>
                                   </svg>
                                 </a></li>
-                              <li class="slide-nav__item"><a href="/pages/about-us" class="slide-nav__link">
-                                  <span>About Us</span>
-                                  <svg aria-hidden="true" focusable="false" role="presentation"
-                                    class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
-                                    <path
-                                      d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z">
-                                    </path>
-                                  </svg>
-                                </a></li>
-                              <li class="slide-nav__item"><a href="/blogs/news" class="slide-nav__link">
-                                  <span>News</span>
-                                  <svg aria-hidden="true" focusable="false" role="presentation"
-                                    class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
-                                    <path
-                                      d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z">
-                                    </path>
-                                  </svg>
-                                </a></li>
-                              <li class="slide-nav__item"><a href="/blogs/skincare-tips" class="slide-nav__link">
-                                  <span>Skincare tips</span>
+                              <li class="slide-nav__item"><a href="/pages/about-us.html" class="slide-nav__link">
+                                  <span>О нас</span>
                                   <svg aria-hidden="true" focusable="false" role="presentation"
                                     class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                     <path
@@ -2838,8 +2460,8 @@
                                 </a></li>
                             </ul>
                           </li>
-                          <li class="slide-nav__item"><a href="/pages/wholesale-program"
-                              class="slide-nav__link"><span>Wholesale Program</span>
+                          <li class="slide-nav__item"><a href="/pages/wholesale-program.html"
+                              class="slide-nav__link"><span>Партнёрам</span>
                               <svg aria-hidden="true" focusable="false" role="presentation"
                                 class="icon icon-chevron-right" viewBox="0 0 284.49 498.98">
                                 <path
@@ -2857,20 +2479,20 @@
               <div id="SearchResultsWrapper" class="site-header__search-results hide">
                 <div id="TopSearched" class="site-header__search-results-wrapper">
                   <div class="page-width">
-                    <div class="h4 site-header__search-title">Top searched</div>
+                    <div class="h4 site-header__search-title">Популярные продукты</div>
                   </div>
                   <div class="page-width page-width--flush-small">
                     <div class="new-grid product-grid scrollable-grid--small" data-view="scrollable">
                       <div class="grid-item grid-product "
-                        data-product-handle="comfort-hydrating-soothing-sensitive-moisturizing-cream"
+                        data-product-handle="comfort-hydrating-soothing-sensitive-moisturizing-cream.html"
                         data-product-id="7778753872023">
                         <div class="grid-item__content"><a
-                            href="/collections/body-care/products/comfort-hydrating-soothing-sensitive-moisturizing-cream"
+                            href="/products/comfort-hydrating-soothing-sensitive-moisturizing-cream.html"
                             class="grid-item__link">
                             <div class="grid-product__image-wrap">
                               <div class="grid-product__tags">
                                 <div class="grid-product__tag grid-product__tag--sold-out">
-                                  Sold Out
+
                                 </div>
                               </div>
                               <div class="grid__image-ratio grid__image-ratio--square">
@@ -2893,26 +2515,10 @@
 
                             <div class="grid-item__meta">
                               <div class="grid-item__meta-main">
-                                <div class="grid-product__title">Winona Moisturizing Tolerance-Extreme Cream</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                <div class="grid-product__title">Увлажняющий крем для чувствительной кожи лица
+                                </div>
                                 <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7778753872023"
-                                  data-template="collection" data-auto-install="false">
+                                  data-template="index" data-auto-install="false">
                                   <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
                                     data-number-of-reviews="0" data-number-of-questions="0"> <span
                                       class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
@@ -2923,12 +2529,6 @@
                                         class="jdgm-star jdgm--off"></span><span class="jdgm-star jdgm--off"></span>
                                     </span> <span class="jdgm-prev-badge__text"> No reviews </span> </div>
                                 </div>
-
-
-
-
-
-
                               </div>
                               <div class="grid-item__meta-secondary">
                                 <div class="grid-product__price"><span class="grid-product__price--current"><span
@@ -2942,15 +2542,14 @@
                         </div>
                       </div>
                       <div class="grid-item grid-product "
-                        data-product-handle="anti-sensitive-moisturizing-repair-essence"
+                        data-product-handle="anti-sensitive-moisturizing-repair-essence.html"
                         data-product-id="7778767995031">
                         <div class="grid-item__content"><a
-                            href="/collections/body-care/products/anti-sensitive-moisturizing-repair-essence"
-                            class="grid-item__link">
+                            href="/products/anti-sensitive-moisturizing-repair-essence.html" class="grid-item__link">
                             <div class="grid-product__image-wrap">
                               <div class="grid-product__tags">
                                 <div class="grid-product__tag grid-product__tag--sold-out">
-                                  Sold Out
+
                                 </div>
                               </div>
                               <div class="grid__image-ratio grid__image-ratio--square">
@@ -2973,42 +2572,8 @@
 
                             <div class="grid-item__meta">
                               <div class="grid-item__meta-main">
-                                <div class="grid-product__title">Winona Soothing Moisturizing Extra Care Essence</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7778767995031"
-                                  data-template="collection" data-auto-install="false">
-                                  <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
-                                    data-number-of-reviews="0" data-number-of-questions="0"> <span
-                                      class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
-                                      aria-label="0.00 stars" role="button"> <span
-                                        class="jdgm-star jdgm--off"></span><span
-                                        class="jdgm-star jdgm--off"></span><span
-                                        class="jdgm-star jdgm--off"></span><span
-                                        class="jdgm-star jdgm--off"></span><span class="jdgm-star jdgm--off"></span>
-                                    </span> <span class="jdgm-prev-badge__text"> No reviews </span> </div>
-                                </div>
-
-
-
-
-
-
+                                <div class="grid-product__title">Успокаивающая, Увлажняющая Эссенция для ухода за кожей
+                                  лица</div>
                               </div>
                               <div class="grid-item__meta-secondary">
                                 <div class="grid-product__price"><span class="grid-product__price--current"><span
@@ -3023,12 +2588,11 @@
                       </div>
                       <div class="grid-item grid-product " data-product-handle="sunblock-milk"
                         data-product-id="7784244969623">
-                        <div class="grid-item__content"><a href="/collections/body-care/products/sunblock-milk"
-                            class="grid-item__link">
+                        <div class="grid-item__content"><a href="/products/sunblock-milk.html" class="grid-item__link">
                             <div class="grid-product__image-wrap">
                               <div class="grid-product__tags">
                                 <div class="grid-product__tag grid-product__tag--sold-out">
-                                  Sold Out
+
                                 </div>
                               </div>
                               <div class="grid__image-ratio grid__image-ratio--square">
@@ -3051,27 +2615,9 @@
 
                             <div class="grid-item__meta">
                               <div class="grid-item__meta-main">
-                                <div class="grid-product__title">Winona Солнцезащитное молочко SPF48
-                                  PA+++, 50 г</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                <div class="grid-product__title">Солнцезащитный крем-молочко SPF48 PA+++</div>
                                 <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7784244969623"
-                                  data-template="collection" data-auto-install="false">
+                                  data-template="index" data-auto-install="false">
                                   <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
                                     data-number-of-reviews="0" data-number-of-questions="0"> <span
                                       class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
@@ -3082,12 +2628,6 @@
                                         class="jdgm-star jdgm--off"></span><span class="jdgm-star jdgm--off"></span>
                                     </span> <span class="jdgm-prev-badge__text"> No reviews </span> </div>
                                 </div>
-
-
-
-
-
-
                               </div>
                               <div class="grid-item__meta-secondary">
                                 <div class="grid-product__price"><span class="grid-product__price--current"><span
@@ -3102,13 +2642,12 @@
                       </div>
                       <div class="grid-item grid-product " data-product-handle="soothing-repairing-freeze-dried-mask"
                         data-product-id="7815196442775">
-                        <div class="grid-item__content"><a
-                            href="/collections/body-care/products/soothing-repairing-freeze-dried-mask"
+                        <div class="grid-item__content"><a href="/products/soothing-repairing-freeze-dried-mask"
                             class="grid-item__link">
                             <div class="grid-product__image-wrap">
                               <div class="grid-product__tags">
                                 <div class="grid-product__tag grid-product__tag--sold-out">
-                                  Sold Out
+
                                 </div>
                               </div>
                               <div class="grid__image-ratio grid__image-ratio--square">
@@ -3131,41 +2670,8 @@
 
                             <div class="grid-item__meta">
                               <div class="grid-item__meta-main">
-                                <div class="grid-product__title">Winona Soothing Repairing Freeze-Dried Mask</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7815196442775"
-                                  data-template="collection" data-auto-install="false">
-                                  <div style="display:none" class="jdgm-prev-badge" data-average-rating="5.00"
-                                    data-number-of-reviews="1" data-number-of-questions="0"> <span
-                                      class="jdgm-prev-badge__stars" data-score="5.00" tabindex="0"
-                                      aria-label="5.00 stars" role="button"> <span
-                                        class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span
-                                        class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span
-                                        class="jdgm-star jdgm--on"></span> </span> <span class="jdgm-prev-badge__text">
-                                      1 review </span> </div>
+                                <div class="grid-product__title">Успокаивающая, восстанавливающая сублимированная маска
                                 </div>
-
-
-
-
-
-
                               </div>
                               <div class="grid-item__meta-secondary">
                                 <div class="grid-product__price"><span class="grid-product__price--current"><span
@@ -3179,154 +2685,46 @@
                           </a>
                         </div>
                       </div>
-                      <div class="grid-item grid-product "
-                        data-product-handle="lightning-repairing-freeze-dried-mask-facial-hydrating-mask"
-                        data-product-id="8091951792279">
-                        <div class="grid-item__content"><a
-                            href="/collections/body-care/products/lightning-repairing-freeze-dried-mask-facial-hydrating-mask"
+                      <div class="grid-item grid-product " data-product-handle="soothing-repairing-freeze-dried-mask"
+                        data-product-id="7815196442775">
+                        <div class="grid-item__content"><a href="/products/soothing-repairing-freeze-dried-mask"
                             class="grid-item__link">
                             <div class="grid-product__image-wrap">
                               <div class="grid-product__tags">
                                 <div class="grid-product__tag grid-product__tag--sold-out">
-                                  Sold Out
+
                                 </div>
                               </div>
                               <div class="grid__image-ratio grid__image-ratio--square">
                                 <img class="lazyload"
-                                  data-src="//winonashop.com/cdn/shop/files/lightning-repairing-freeze-dried-mask-facial-hydrating-mask-1_{width}x.jpg?v=1698752458"
+                                  data-src="//winonashop.com/cdn/shop/products/75d22565a48b53eb1a3960486fdb0f5e_{width}x.jpg?v=1701670686"
                                   data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
-                                  data-sizes="auto" alt="">
+                                  data-sizes="auto" alt="Soothing Repairing Freeze-Dried Mask-WINONA">
                                 <noscript>
                                   <img class="grid-product__image lazyloaded"
-                                    src="//winonashop.com/cdn/shop/files/lightning-repairing-freeze-dried-mask-facial-hydrating-mask-1_400x.jpg?v=1698752458"
-                                    alt="">
+                                    src="//winonashop.com/cdn/shop/products/75d22565a48b53eb1a3960486fdb0f5e_400x.jpg?v=1701670686"
+                                    alt="Soothing Repairing Freeze-Dried Mask-WINONA">
                                 </noscript>
                               </div>
                               <div class="grid-product__secondary-image small--hide"><img class="lazyload"
-                                  data-src="//winonashop.com/cdn/shop/files/lightning-repairing-freeze-dried-mask-facial-hydrating-mask-2_{width}x.jpg?v=1698653737"
-                                  data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto" alt="">
+                                  data-src="//winonashop.com/cdn/shop/products/802eecb9506fb7bb0bf3791e06f9682d_{width}x.jpg?v=1701670686"
+                                  data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
+                                  alt="Soothing Repairing Freeze-Dried Mask-WINONA">
                               </div>
                             </div>
 
                             <div class="grid-item__meta">
                               <div class="grid-item__meta-main">
-                                <div class="grid-product__title">Winona Lightening Repairing Freeze-Dried Mask</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div style="" class="jdgm-widget jdgm-preview-badge" data-id="8091951792279"
-                                  data-template="collection" data-auto-install="false">
-                                  <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
-                                    data-number-of-reviews="0" data-number-of-questions="0"> <span
-                                      class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
-                                      aria-label="0.00 stars" role="button"> <span
-                                        class="jdgm-star jdgm--off"></span><span
-                                        class="jdgm-star jdgm--off"></span><span
-                                        class="jdgm-star jdgm--off"></span><span
-                                        class="jdgm-star jdgm--off"></span><span class="jdgm-star jdgm--off"></span>
-                                    </span> <span class="jdgm-prev-badge__text"> No reviews </span> </div>
+                                <div class="grid-product__title">Успокаивающая, восстанавливающая сублимированная маска
                                 </div>
-
-
-
-
-
-
                               </div>
                               <div class="grid-item__meta-secondary">
                                 <div class="grid-product__price"><span class="grid-product__price--current"><span
                                       aria-hidden="true" class="grid-product__price--from"><span>from</span>
-                                      $21<sup>99</sup></span>
-                                    <span class="visually-hidden"><span>from</span> $21.99</span>
+                                      $20<sup>99</sup></span>
+                                    <span class="visually-hidden"><span>from</span> $20.99</span>
                                   </span></div><span class="shopify-product-reviews-badge"
-                                  data-id="8091951792279"></span>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="grid-item grid-product "
-                        data-product-handle="soothing-repair-set-for-sensitive-skin-and-dry-skin"
-                        data-product-id="7865744457879">
-                        <div class="grid-item__content"><a
-                            href="/collections/body-care/products/soothing-repair-set-for-sensitive-skin-and-dry-skin"
-                            class="grid-item__link">
-                            <div class="grid-product__image-wrap">
-                              <div class="grid-product__tags">
-                                <div class="grid-product__tag grid-product__tag--sold-out">
-                                  Sold Out
-                                </div>
-                              </div>
-                              <div class="grid__image-ratio grid__image-ratio--square">
-                                <img class="lazyload"
-                                  data-src="//winonashop.com/cdn/shop/products/10801080_{width}x.jpg?v=1670406009"
-                                  data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
-                                  data-sizes="auto" alt="Soothing Repair Set for Sensitive skin and dry skin-WINONA">
-                                <noscript>
-                                  <img class="grid-product__image lazyloaded"
-                                    src="//winonashop.com/cdn/shop/products/10801080_400x.jpg?v=1670406009"
-                                    alt="Soothing Repair Set for Sensitive skin and dry skin-WINONA">
-                                </noscript>
-                              </div>
-                              <div class="grid-product__secondary-image small--hide"><img class="lazyload"
-                                  data-src="//winonashop.com/cdn/shop/products/20221202-114719_{width}x.jpg?v=1670406010"
-                                  data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
-                                  alt="Soothing Repair Set for Sensitive skin and dry skin-WINONA">
-                              </div>
-                            </div>
-
-                            <div class="grid-item__meta">
-                              <div class="grid-item__meta-main">
-                                <div class="grid-product__title">Winona Soothing Repair Set for Sensitive skin and dry
-                                  skin</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7865744457879"
-                                  data-template="collection" data-auto-install="false">
-
-                                </div>
-
-
-
-
-
-
-                              </div>
-                              <div class="grid-item__meta-secondary">
-                                <div class="grid-product__price"><span class="grid-product__price--current"><span
-                                      aria-hidden="true">$25<sup>99</sup></span>
-                                    <span class="visually-hidden">$25.99</span>
-                                  </span></div><span class="shopify-product-reviews-badge"
-                                  data-id="7865744457879"></span>
+                                  data-id="7815196442775"></span>
                               </div>
                             </div>
                           </a>
@@ -3351,6 +2749,8 @@
             </header>
           </div>
         </div>
+
+
 
 
       </div>
@@ -3459,12 +2859,12 @@
 
 
                     <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-                      <a href="/" title="Back to the frontpage">Home</a>
+                      <a href="/" title="Back to the frontpage">Главная</a>
 
 
 
                       <span class="breadcrumb__divider" aria-hidden="true">/</span>
-                      <a href="/collections">Collections</a>
+                      <a href="/collections">Коллекция</a>
 
 
                       <span class="breadcrumb__divider" aria-hidden="true">/</span>
@@ -3477,7 +2877,7 @@
 
 
                     <h1 class="section-header__title">
-                      Body Care
+                      Уход За Телом
                     </h1>
                   </header>
                 </div>
@@ -3486,7 +2886,7 @@
           </div>
 
           <div class="page-width medium-up--hide" data-collection-count="" style="padding-top: 15px;">
-            3 products
+
           </div>
         </div>
         <div id="shopify-section-template--16051902447767__main-collection" class="shopify-section">
@@ -3555,87 +2955,6 @@
                               </div>
                             </div>
                           </div>
-                          <form class="filter-form">
-                            <div class="collection-sidebar__group--1">
-                              <div class="collection-sidebar__group"><button type="button"
-                                  class="collapsible-trigger collapsible-trigger-btn collapsible--auto-height tag-list__header"
-                                  data-controls="CollectionSidebar-1" data-collapsible-id="filter-availability">
-                                  <span class="collapsible-trigger__layout collapsible-trigger__layout--inline">
-                                    <span>Availability</span><span
-                                      class="collapsible-trigger__icon collapsible-trigger__icon--open"
-                                      role="presentation">
-                                      <svg aria-hidden="true" focusable="false" role="presentation"
-                                        class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16">
-                                        <path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000"
-                                          fill="none" fill-rule="evenodd"></path>
-                                      </svg>
-                                    </span>
-                                  </span>
-                                </button>
-                                <div data-id="CollectionSidebar-1" data-collapsible-id="filter-availability"
-                                  class="collapsible-content collapsible-content--all">
-                                  <div class="collapsible-content__inner">
-                                    <ul class="no-bullets tag-list">
-                                      <li class="tag hide">
-                                        <label class="tag__checkbox-wrapper text-label">
-                                          <input type="checkbox" class="tag__input" name="filter.v.availability"
-                                            value="1"><span class="tag__checkbox"></span>
-                                          <span>
-                                            <span class="tag__text">In stock</span> (0)
-                                          </span></label>
-                                      </li>
-                                      <li class="tag">
-                                        <label class="tag__checkbox-wrapper text-label">
-                                          <input type="checkbox" class="tag__input" name="filter.v.availability"
-                                            value="0"><span class="tag__checkbox"></span>
-                                          <span>
-                                            <span class="tag__text">Out of stock</span> (3)
-                                          </span></label>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="collection-sidebar__group--2">
-                              <div class="collection-sidebar__group"><button type="button"
-                                  class="collapsible-trigger collapsible-trigger-btn collapsible--auto-height tag-list__header"
-                                  data-controls="CollectionSidebar-2" data-collapsible-id="filter-price">
-                                  <span class="collapsible-trigger__layout collapsible-trigger__layout--inline">
-                                    <span>Price</span><span
-                                      class="collapsible-trigger__icon collapsible-trigger__icon--open"
-                                      role="presentation">
-                                      <svg aria-hidden="true" focusable="false" role="presentation"
-                                        class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16">
-                                        <path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000"
-                                          fill="none" fill-rule="evenodd"></path>
-                                      </svg>
-                                    </span>
-                                  </span>
-                                </button>
-                                <div data-id="CollectionSidebar-2" data-collapsible-id="filter-price"
-                                  class="collapsible-content collapsible-content--all">
-                                  <div class="collapsible-content__inner">
-
-                                    <div class="price-range" data-min-value="" data-min-name="filter.v.price.gte"
-                                      data-min="" data-max-value="" data-max-name="filter.v.price.lte" data-max="16.99">
-                                      <div class="price-range__display-wrapper">
-                                        <span class="price-range__display-min"></span>
-                                        <span class="price-range__display-max"></span>
-                                      </div>
-                                      <div class="price-range__slider-wrapper">
-                                        <div class="price-range__slider"></div>
-                                      </div>
-                                      <input class="price-range__input price-range__input-min" name="filter.v.price.gte"
-                                        value="" readonly="">
-                                      <input class="price-range__input price-range__input-max" name="filter.v.price.lte"
-                                        value="" readonly="">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </form>
                         </div>
                       </div>
                     </div>
@@ -3684,24 +3003,10 @@
                             </div>
 
                             <div class="collection-filter__item collection-filter__item--count small--hide">
-                              3 products
+
                             </div>
 
                             <div class="collection-filter__item collection-filter__item--right">
-                              <div class="collection-filter__sort small--hide">
-                                <label for="SortBy" class="hidden-label">Sort</label>
-                                <select name="SortBy" id="SortBy" data-default-sortby="best-selling">
-                                  <option value="title-ascending" selected="selected">Sort</option>
-                                  <option value="manual">Featured</option>
-                                  <option value="best-selling" selected="selected">Best selling</option>
-                                  <option value="title-ascending">Alphabetically, A-Z</option>
-                                  <option value="title-descending">Alphabetically, Z-A</option>
-                                  <option value="price-ascending">Price, low to high</option>
-                                  <option value="price-descending">Price, high to low</option>
-                                  <option value="created-ascending">Date, old to new</option>
-                                  <option value="created-descending">Date, new to old</option>
-                                </select>
-                              </div>
                               <ul class="no-bullets inline-list text-right">
                                 <li><button type="button" class="grid-view-btn" data-view="large" title="Large">
                                     <svg aria-hidden="true" focusable="false" role="presentation"
@@ -3737,378 +3042,9 @@
 
                         </div>
                         <div class="new-grid product-grid collection-grid" data-view="small" data-scroll-to="">
-                          <div class="grid-item grid-product "
-                            data-product-handle="moisturizing-softening-lip-balm-natural-origin-plant"
-                            data-product-id="7808901316759">
-                            <div class="grid-item__content">
-                              <div class="grid-product__actions"><button
-                                  class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-7808901316759 small--hide"
-                                  title="Quick shop" tabindex="-1"
-                                  data-handle="moisturizing-softening-lip-balm-natural-origin-plant">
-                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-                                    viewBox="0 0 64 64">
-                                    <defs>
-                                      <style>
-                                        .cls-1 {
-                                          fill: none;
-                                          stroke: #000;
-                                          stroke-miterlimit: 10;
-                                          stroke-width: 2px
-                                        }
-                                      </style>
-                                    </defs>
-                                    <path class="cls-1"
-                                      d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                                    </path>
-                                  </svg>
-                                  <span class="icon__fallback-text">Quick shop</span>
-                                </button></div><a
-                                href="/collections/body-care/products/moisturizing-softening-lip-balm-natural-origin-plant"
-                                class="grid-item__link">
-                                <div class="grid-product__image-wrap">
-                                  <div class="grid-product__tags">
-                                    <div class="grid-product__tag grid-product__tag--sold-out">
-                                      Sold Out
-                                    </div>
-                                  </div>
-                                  <div class="grid__image-ratio grid__image-ratio--square">
-                                    <img class="lazyload"
-                                      data-src="//winonashop.com/cdn/shop/files/moisturizing-softening-lip-balm-natural-origin-plant-1_{width}x.jpg?v=1693452650"
-                                      data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
-                                      data-sizes="auto"
-                                      alt="Moisturizing Softening Lip Balm Natural Origin Plant Hydrating Lip Care 1">
-                                    <noscript>
-                                      <img class="grid-product__image lazyloaded"
-                                        src="//winonashop.com/cdn/shop/files/moisturizing-softening-lip-balm-natural-origin-plant-1_400x.jpg?v=1693452650"
-                                        alt="Moisturizing Softening Lip Balm Natural Origin Plant Hydrating Lip Care 1">
-                                    </noscript>
-                                  </div>
-                                  <div class="grid-product__secondary-image small--hide"><img class="lazyload"
-                                      data-src="//winonashop.com/cdn/shop/files/moisturizing-softening-lip-balm-natural-origin-plant-2_{width}x.jpg?v=1693452651"
-                                      data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
-                                      alt="Moisturizing Softening Lip Balm Natural Origin Plant Hydrating Lip Care 2">
-                                  </div>
-                                </div>
-
-                                <div class="grid-item__meta">
-                                  <div class="grid-item__meta-main">
-                                    <div class="grid-product__title">Winona Moisturizing Lip Balm</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7808901316759"
-                                      data-template="collection" data-auto-install="false">
-
-                                    </div>
-
-
-
-
-
-
-                                  </div>
-                                  <div class="grid-item__meta-secondary">
-                                    <div class="grid-product__price"><span class="grid-product__price--current"><span
-                                          aria-hidden="true">$6<sup>99</sup></span>
-                                        <span class="visually-hidden">$6.99</span>
-                                      </span></div><span class="shopify-product-reviews-badge"
-                                      data-id="7808901316759"></span>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div id="QuickShopModal-7808901316759" class="modal modal--square modal--quick-shop"
-                            data-product-id="7808901316759">
-                            <div class="modal__inner">
-                              <div class="modal__centered">
-                                <div class="modal__centered-content">
-                                  <div id="QuickShopHolder-moisturizing-softening-lip-balm-natural-origin-plant"></div>
-                                </div>
-
-                                <button type="button" class="btn btn--circle btn--icon modal__close js-modal-close">
-                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close"
-                                    viewBox="0 0 64 64">
-                                    <defs>
-                                      <style>
-                                        .cls-1 {
-                                          fill: none;
-                                          stroke: #000;
-                                          stroke-miterlimit: 10;
-                                          stroke-width: 2px
-                                        }
-                                      </style>
-                                    </defs>
-                                    <path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"></path>
-                                  </svg>
-                                  <span class="icon__fallback-text">"Close (esc)"</span>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="grid-item grid-product "
-                            data-product-handle="anti-itch-moisturizing-and-softening-body-emulsion"
-                            data-product-id="7886989099159">
-                            <div class="grid-item__content">
-                              <div class="grid-product__actions"><button
-                                  class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-7886989099159 small--hide"
-                                  title="Quick shop" tabindex="-1"
-                                  data-handle="anti-itch-moisturizing-and-softening-body-emulsion">
-                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-                                    viewBox="0 0 64 64">
-                                    <defs>
-                                      <style>
-                                        .cls-1 {
-                                          fill: none;
-                                          stroke: #000;
-                                          stroke-miterlimit: 10;
-                                          stroke-width: 2px
-                                        }
-                                      </style>
-                                    </defs>
-                                    <path class="cls-1"
-                                      d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                                    </path>
-                                  </svg>
-                                  <span class="icon__fallback-text">Quick shop</span>
-                                </button></div><a
-                                href="/collections/body-care/products/anti-itch-moisturizing-and-softening-body-emulsion"
-                                class="grid-item__link">
-                                <div class="grid-product__image-wrap">
-                                  <div class="grid-product__tags">
-                                    <div class="grid-product__tag grid-product__tag--sold-out">
-                                      Sold Out
-                                    </div>
-                                  </div>
-                                  <div class="grid__image-ratio grid__image-ratio--square">
-                                    <img class="lazyload"
-                                      data-src="//winonashop.com/cdn/shop/products/150g_{width}x.jpg?v=1672906779"
-                                      data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
-                                      data-sizes="auto"
-                                      alt="Moisturizing &amp; Softening Body Lotion - Anti-Itch-WINONA">
-                                    <noscript>
-                                      <img class="grid-product__image lazyloaded"
-                                        src="//winonashop.com/cdn/shop/products/150g_400x.jpg?v=1672906779"
-                                        alt="Moisturizing & Softening Body Lotion - Anti-Itch-WINONA">
-                                    </noscript>
-                                  </div>
-                                </div>
-
-                                <div class="grid-item__meta">
-                                  <div class="grid-item__meta-main">
-                                    <div class="grid-product__title">Winona Moisturizing &amp; Softening Body Emulsion -
-                                      Anti-Itch</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7886989099159"
-                                      data-template="collection" data-auto-install="false">
-                                      <div style="display:none" class="jdgm-prev-badge" data-average-rating="0.00"
-                                        data-number-of-reviews="0" data-number-of-questions="0"> <span
-                                          class="jdgm-prev-badge__stars" data-score="0.00" tabindex="0"
-                                          aria-label="0.00 stars" role="button"> <span
-                                            class="jdgm-star jdgm--off"></span><span
-                                            class="jdgm-star jdgm--off"></span><span
-                                            class="jdgm-star jdgm--off"></span><span
-                                            class="jdgm-star jdgm--off"></span><span class="jdgm-star jdgm--off"></span>
-                                        </span> <span class="jdgm-prev-badge__text"> No reviews </span> </div>
-                                    </div>
-
-
-
-
-
-
-                                  </div>
-                                  <div class="grid-item__meta-secondary">
-                                    <div class="grid-product__price"><span class="grid-product__price--current"><span
-                                          aria-hidden="true">$16<sup>99</sup></span>
-                                        <span class="visually-hidden">$16.99</span>
-                                      </span></div><span class="shopify-product-reviews-badge"
-                                      data-id="7886989099159"></span>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div id="QuickShopModal-7886989099159" class="modal modal--square modal--quick-shop"
-                            data-product-id="7886989099159">
-                            <div class="modal__inner">
-                              <div class="modal__centered">
-                                <div class="modal__centered-content">
-                                  <div id="QuickShopHolder-anti-itch-moisturizing-and-softening-body-emulsion"></div>
-                                </div>
-
-                                <button type="button" class="btn btn--circle btn--icon modal__close js-modal-close">
-                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close"
-                                    viewBox="0 0 64 64">
-                                    <defs>
-                                      <style>
-                                        .cls-1 {
-                                          fill: none;
-                                          stroke: #000;
-                                          stroke-miterlimit: 10;
-                                          stroke-width: 2px
-                                        }
-                                      </style>
-                                    </defs>
-                                    <path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"></path>
-                                  </svg>
-                                  <span class="icon__fallback-text">"Close (esc)"</span>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="grid-item grid-product "
-                            data-product-handle="moisturizing-softening-hand-cream-for-dry-hands"
-                            data-product-id="7808887521431">
-                            <div class="grid-item__content">
-                              <div class="grid-product__actions"><button
-                                  class="btn btn--circle btn--icon quick-product__btn quick-product__btn--not-ready js-modal-open-quick-modal-7808887521431 small--hide"
-                                  title="Quick shop" tabindex="-1"
-                                  data-handle="moisturizing-softening-hand-cream-for-dry-hands">
-                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
-                                    viewBox="0 0 64 64">
-                                    <defs>
-                                      <style>
-                                        .cls-1 {
-                                          fill: none;
-                                          stroke: #000;
-                                          stroke-miterlimit: 10;
-                                          stroke-width: 2px
-                                        }
-                                      </style>
-                                    </defs>
-                                    <path class="cls-1"
-                                      d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42">
-                                    </path>
-                                  </svg>
-                                  <span class="icon__fallback-text">Quick shop</span>
-                                </button></div><a
-                                href="/collections/body-care/products/moisturizing-softening-hand-cream-for-dry-hands"
-                                class="grid-item__link">
-                                <div class="grid-product__image-wrap">
-                                  <div class="grid-product__tags">
-                                    <div class="grid-product__tag grid-product__tag--sold-out">
-                                      Sold Out
-                                    </div>
-                                  </div>
-                                  <div class="grid__image-ratio grid__image-ratio--square">
-                                    <img class="lazyload"
-                                      data-src="//winonashop.com/cdn/shop/files/moisturizing-softening-hand-cream-for-dry-hands-1_{width}x.jpg?v=1693280261"
-                                      data-widths="[160, 200, 280, 360, 540, 720, 900]" data-aspectratio="1.0"
-                                      data-sizes="auto" alt="Moisturizing Softening Hand Cream For Dry Hands 1">
-                                    <noscript>
-                                      <img class="grid-product__image lazyloaded"
-                                        src="//winonashop.com/cdn/shop/files/moisturizing-softening-hand-cream-for-dry-hands-1_400x.jpg?v=1693280261"
-                                        alt="Moisturizing Softening Hand Cream For Dry Hands 1">
-                                    </noscript>
-                                  </div>
-                                  <div class="grid-product__secondary-image small--hide"><img class="lazyload"
-                                      data-src="//winonashop.com/cdn/shop/files/moisturizing-softening-hand-cream-for-dry-hands-2_{width}x.jpg?v=1693280262"
-                                      data-widths="[360, 540, 720, 1000]" data-aspectratio="1.0" data-sizes="auto"
-                                      alt="Moisturizing Softening Hand Cream For Dry Hands 2">
-                                  </div>
-                                </div>
-
-                                <div class="grid-item__meta">
-                                  <div class="grid-item__meta-main">
-                                    <div class="grid-product__title">Winona Moisturizing &amp; Softening Hand Cream
-                                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <div style="" class="jdgm-widget jdgm-preview-badge" data-id="7808887521431"
-                                      data-template="collection" data-auto-install="false">
-
-                                    </div>
-
-
-
-
-
-
-                                  </div>
-                                  <div class="grid-item__meta-secondary">
-                                    <div class="grid-product__price"><span class="grid-product__price--current"><span
-                                          aria-hidden="true">$8<sup>99</sup></span>
-                                        <span class="visually-hidden">$8.99</span>
-                                      </span></div><span class="shopify-product-reviews-badge"
-                                      data-id="7808887521431"></span>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div id="QuickShopModal-7808887521431" class="modal modal--square modal--quick-shop"
-                            data-product-id="7808887521431">
-                            <div class="modal__inner">
-                              <div class="modal__centered">
-                                <div class="modal__centered-content">
-                                  <div id="QuickShopHolder-moisturizing-softening-hand-cream-for-dry-hands"></div>
-                                </div>
-
-                                <button type="button" class="btn btn--circle btn--icon modal__close js-modal-close">
-                                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close"
-                                    viewBox="0 0 64 64">
-                                    <defs>
-                                      <style>
-                                        .cls-1 {
-                                          fill: none;
-                                          stroke: #000;
-                                          stroke-miterlimit: 10;
-                                          stroke-width: 2px
-                                        }
-                                      </style>
-                                    </defs>
-                                    <path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"></path>
-                                  </svg>
-                                  <span class="icon__fallback-text">"Close (esc)"</span>
-                                </button>
-                              </div>
-                            </div>
+                          <div class="messageCatalog">
+                            Мы рады сообщить, что новые товары этой линейки скоро появятся в нашем каталоге. Следите за
+                            обновлениями!
                           </div>
                         </div>
                       </div>
@@ -4173,7 +3109,7 @@
                   </div>
 
                   <ul class="footer__menu">
-                    <li><a href="/pages/anti-sensitive">Contact Us</a></li>
+                    <li><a href="/pages/contact-us.html">Contact Us</a></li>
                     <li><a href="/pages/faqs">FAQS</a></li>
                     <li><a href="https://winonashop.com/apps/17TRACK">Track Order</a></li>
                   </ul>
@@ -4187,7 +3123,7 @@
                         </div>
 
                         <ul class="footer__menu footer__menu--underline">
-                          <li><a href="/pages/anti-sensitive">
+                          <li><a href="/pages/contact-us.html">
                               <span class="icon-and-text">
                                 <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-email"
                                   viewBox="0 0 64 64">
@@ -4278,7 +3214,7 @@
 
                   <ul class="footer__menu">
                     <li><a href="/pages/affiliate-program">Affiliate Program</a></li>
-                    <li><a href="/pages/wholesale-program">Wholesale</a></li>
+                    <li><a href="/pages/wholesale-program.html">Wholesale</a></li>
                   </ul>
                 </div>
                 <div class="footer__block" data-type="payment">
